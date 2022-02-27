@@ -1,0 +1,16 @@
+C:\Users\bakar\Workspace\cSharp\loader\bin\Debug\net5.0\loader.exe
+C:\Users\bakar\Workspace\cSharp\loader\bin\Debug\net5.0\loader.deps.json
+C:\Users\bakar\Workspace\cSharp\loader\bin\Debug\net5.0\loader.runtimeconfig.json
+C:\Users\bakar\Workspace\cSharp\loader\bin\Debug\net5.0\loader.runtimeconfig.dev.json
+C:\Users\bakar\Workspace\cSharp\loader\bin\Debug\net5.0\loader.dll
+C:\Users\bakar\Workspace\cSharp\loader\bin\Debug\net5.0\ref\loader.dll
+C:\Users\bakar\Workspace\cSharp\loader\bin\Debug\net5.0\loader.pdb
+C:\Users\bakar\Workspace\cSharp\loader\obj\Debug\net5.0\loader.csproj.AssemblyReference.cache
+C:\Users\bakar\Workspace\cSharp\loader\obj\Debug\net5.0\loader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bakar\Workspace\cSharp\loader\obj\Debug\net5.0\loader.AssemblyInfoInputs.cache
+C:\Users\bakar\Workspace\cSharp\loader\obj\Debug\net5.0\loader.AssemblyInfo.cs
+C:\Users\bakar\Workspace\cSharp\loader\obj\Debug\net5.0\loader.csproj.CoreCompileInputs.cache
+C:\Users\bakar\Workspace\cSharp\loader\obj\Debug\net5.0\loader.dll
+C:\Users\bakar\Workspace\cSharp\loader\obj\Debug\net5.0\ref\loader.dll
+C:\Users\bakar\Workspace\cSharp\loader\obj\Debug\net5.0\loader.pdb
+C:\Users\bakar\Workspace\cSharp\loader\obj\Debug\net5.0\loader.genruntimeconfig.cache
